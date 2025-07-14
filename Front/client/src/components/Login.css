@@ -7,31 +7,76 @@
 }
 
 .login-box {
-  background-color: rgba(0, 102, 170, 0.9);
+  background-color: rgba(0, 102, 170, 0.85); /* Más transparente */
   padding: 30px;
   border-radius: 25px;
-  width: 320px;
-  box-shadow: 0 0 15px #000;
+  width: 350px; /* Tamaño exacto */
+  height: auto;
+  min-height: 400px; /* Altura mínima */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   text-align: center;
   color: white;
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animaciones */
+.slide-in-right {
+  animation: slideInRight 0.5s forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.5s forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s forwards;
+}
+
+.slide-out-left {
+  animation: slideOutLeft 0.5s forwards;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-100%); opacity: 0; }
 }
 
 .login-box input {
   width: 90%;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 12px;
+  margin: 12px 0;
   border: none;
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .login-box button {
   width: 95%;
-  padding: 10px;
+  padding: 12px;
   background-color: #004080;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .login-box button:hover {
@@ -39,10 +84,13 @@
 }
 
 .login-box p {
-  margin-top: 15px;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 .login-box p span {
   color: #ffd700;
   cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
 }
