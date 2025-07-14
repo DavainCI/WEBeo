@@ -1,41 +1,65 @@
 .login-container {
-  background: url('../assets/backgroundL.jpg') no-repeat center center/cover;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)),
+    url('../assets/backgroundL.jpg') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 .login-box {
-  background-color: rgba(0, 102, 170, 0.85); /* Más transparente */
-  padding: 30px;
-  border-radius: 25px;
-  width: 350px; /* Tamaño exacto */
-  height: auto;
-  min-height: 400px; /* Altura mínima */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 102, 170, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  width: 380px;
+  min-height: 450px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
   color: white;
-  transition: transform 0.5s ease-in-out;
+  transition: all 0.4s ease-in-out;
   position: relative;
   overflow: hidden;
 }
 
-/* Animaciones */
+.login-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  transform: rotate(30deg);
+  pointer-events: none;
+}
+
+.login-box h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Animaciones mejoradas */
 .slide-in-right {
-  animation: slideInRight 0.5s forwards;
+  animation: slideInRight 0.5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .slide-out-right {
-  animation: slideOutRight 0.5s forwards;
+  animation: slideOutRight 0.5s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 .slide-in-left {
-  animation: slideInLeft 0.5s forwards;
+  animation: slideInLeft 0.5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .slide-out-left {
-  animation: slideOutLeft 0.5s forwards;
+  animation: slideOutLeft 0.5s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 @keyframes slideInRight {
@@ -59,38 +83,109 @@
 }
 
 .login-box input {
-  width: 90%;
-  padding: 12px;
+  width: 100%;
+  padding: 14px;
   margin: 12px 0;
   border: none;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.95);
+  font-size: 15px;
+  transition: box-shadow 0.3s;
+}
+
+.login-box input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.3);
 }
 
 .login-box button {
-  width: 95%;
-  padding: 12px;
+  width: 100%;
+  padding: 14px;
   background-color: #004080;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
-  font-weight: bold;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
 }
 
 .login-box button:hover {
   background-color: #0066cc;
+  transform: translateY(-2px);
 }
 
-.login-box p {
-  margin-top: 20px;
+.login-box button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-message {
+  color: #ff6b6b;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
   font-size: 14px;
 }
 
-.login-box p span {
+.social-login {
+  margin: 25px 0;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: white !important;
+  color: #444 !important;
+  border: 1px solid #ddd !important;
+}
+
+.google-btn:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.google-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.toggle-auth {
+  margin-top: 25px;
+  font-size: 15px;
+}
+
+.toggle-auth span {
   color: #ffd700;
   cursor: pointer;
   font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.toggle-auth span:hover {
   text-decoration: underline;
+  opacity: 0.9;
+}
+
+.loading-spinner {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 3px solid white;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

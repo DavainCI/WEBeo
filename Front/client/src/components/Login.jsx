@@ -9,6 +9,7 @@ import {
 import { getFirestore, doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { auth } from '../firebase';
 import './Login.css';
+import googleLogo from '../assets/googleG.png';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -22,7 +23,6 @@ const Login = () => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // Función para guardar/actualizar datos del usuario en Firestore
   const saveUserData = async (userId, userData) => {
     const db = getFirestore();
     try {
@@ -67,7 +67,6 @@ const Login = () => {
     }, 500);
   };
 
-  // Autenticación con email y contraseña
   const handleEmailAuth = async (e) => {
     e.preventDefault();
     setError('');
@@ -75,21 +74,18 @@ const Login = () => {
 
     try {
       if (isLogin) {
-        // Login
         const userCredential = await signInWithEmailAndPassword(
           auth, 
           form.email, 
           form.password
         );
         
-        // Actualizar último login
         await saveUserData(userCredential.user.uid, {
           email: form.email
         });
         
         navigate('/principal');
       } else {
-        // Registro
         await handleRegister();
       }
     } catch (err) {
@@ -99,7 +95,6 @@ const Login = () => {
     }
   };
 
-  // Registro de nuevo usuario
   const handleRegister = async () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -120,7 +115,6 @@ const Login = () => {
     }
   };
 
-  // Autenticación con Google
   const handleGoogleAuth = async () => {
     setError('');
     setIsLoading(true);
@@ -145,7 +139,6 @@ const Login = () => {
     }
   };
 
-  // Traducción de errores de Firebase
   const getFirebaseError = (code) => {
     switch (code) {
       case 'auth/invalid-email': return 'Email inválido';
@@ -194,7 +187,15 @@ const Login = () => {
             required
             minLength="6"
           />
-          <button type="submit" disabled={isLoading}>
+          <button 
+            type="submit" 
+            disabled={isLoading}
+            style={{
+              backgroundColor: isLoading ? '#2a4d6e' : '#004080',
+              color: 'white'
+            }}
+          >
+            {isLoading && <span className="loading-spinner"></span>}
             {isLoading ? 'Procesando...' : (isLogin ? 'Iniciar sesión' : 'Registrarse')}
           </button>
         </form>
@@ -204,10 +205,15 @@ const Login = () => {
             onClick={handleGoogleAuth} 
             className="google-btn"
             disabled={isLoading}
+            style={{
+              opacity: isLoading ? 0.7 : 1,
+              cursor: isLoading ? 'not-allowed' : 'pointer'
+            }}
           >
             <img 
-              src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
+              src={googleLogo} 
               alt="Google" 
+              style={{ width: '20px', height: '20px' }}
             />
             {isLogin ? 'Iniciar con Google' : 'Registrarse con Google'}
           </button>
@@ -215,7 +221,10 @@ const Login = () => {
 
         <p className="toggle-auth">
           {isLogin ? '¿No tienes cuenta?' : '¿Ya tienes cuenta?'}{' '}
-          <span onClick={!isLoading ? toggleAuthMode : undefined}>
+          <span 
+            onClick={!isLoading ? toggleAuthMode : undefined}
+            style={{ color: '#7fbfff' }}
+          >
             {isLogin ? 'Regístrate' : 'Inicia sesión'}
           </span>
         </p>
