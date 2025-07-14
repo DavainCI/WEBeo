@@ -9,7 +9,7 @@ const firebaseConfig = {
   projectId: "databasewebeo",
   storageBucket: "databasewebeo.appspot.com",
   messagingSenderId: "330027314795", 
-  appId: "TU_APP_ID"
+  appId: "1:330027314795:web:77a52fd63a56b60db70b2e"
 };
 
 const app = initializeApp(firebaseConfig);
