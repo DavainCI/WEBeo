@@ -41,17 +41,72 @@
 
 .info-cuadro {
   background-color: rgba(12, 61, 98, 0.8);
-  width: 280px;
-  height: 280px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 14px;
+  width: 100%;
+  max-width: 600px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  margin: 10px;
 }
 
+.info-textarea {
+  width: 100%;
+  min-height: 400px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.6;
+  resize: none;
+  outline: none;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.info-textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.info-textarea::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.info-textarea::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.info-textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos para viñetas y listas */
+.info-textarea {
+  white-space: pre-wrap;
+}
+
+
+.info-cuadro p {
+  margin: 0;
+  padding: 0;
+  min-height: 100px;
+  outline: none;
+  width: 100%;
+  white-space: pre-wrap;
+  font-family: inherit;     /* Hereda la fuente personalizada */
+}
+
+/* Estilos para las listas (viñetas) */
+.info-cuadro ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.info-cuadro li {
+  margin-bottom: 5px;
+}
 .producto {
   background-color: rgba(12, 61, 98, 0.8);
   padding: 20px;
