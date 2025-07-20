@@ -1,16 +1,19 @@
-body {
+/* src/index.css */
+@font-face {
+  font-family: 'Arturo Outline';
+  src: url('./fonts/fuenteP.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
   margin: 0;
   padding: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+  font-family: 'Arturo Outline', sans-serif;
+}
+
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Opcional: Si quieres forzar Verdana en elementos que no lo heredan */
-button, input, textarea, select {
-  font-family: inherit; /* Hereda de body, que ya usa Verdana */
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

@@ -27,8 +27,18 @@ function Principal() {
       </div>
 
       <div className="botones">
-        <a href="https://open.spotify.com/intl-es/track/4RVUw6uwxQGsbLBKAWNiHL?si=37007cd7b8654ea8" target="_blank" rel="noopener noreferrer" className="btn spotify">Escuchar en Spotify</a>
-        <a href="https://www.youtube.com/watch?v=VvHCFDUwv4s&list=RDVvHCFDUwv4s&start_radio=1" target="_blank" rel="noopener noreferrer" className="btn youtube">Ver en YouTube</a>
+        <a href="https://open.spotify.com/intl-es/track/4RVUw6uwxQGsbLBKAWNiHL?si=37007cd7b8654ea8" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="btn spotify">
+          Escuchar en Spotify
+        </a>
+        <a href="https://www.youtube.com/watch?v=VvHCFDUwv4s&list=RDVvHCFDUwv4s&start_radio=1" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="btn youtube">
+          Ver en YouTube
+        </a>
       </div>
     </div>
   );

@@ -1,14 +1,3 @@
-@font-face {
-  font-family: 'Arturo Outline';
-  src: url('../fonts/fuenteP.ttf');
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arturo Outline', sans-serif;
-}
-
 .principal {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.7), 
@@ -92,29 +81,60 @@ body, html {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin: 40px 0;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
 }
 
 .btn {
   padding: 15px 30px;
-  border-radius: 20px;
+  border-radius: 25px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
-  color: white;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white !important;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  min-width: 220px;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .spotify {
-  background-color: #1db954;
+  background: linear-gradient(135deg, #1DB954 0%, #1ED760 100%);
 }
 
 .youtube {
-  background-color: #ff0000;
+  background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+}
+
+/* Efecto adicional para los botones */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn:hover::after {
+  opacity: 1;
 }
