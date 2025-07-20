@@ -8,6 +8,7 @@
   color: white;
   text-align: center;
   padding: 20px;
+  font-family: 'Arturo Outline', sans-serif;
 }
 
 .nav {
@@ -17,18 +18,33 @@
   padding: 15px 0;
   position: relative;
   z-index: 1;
+  flex-wrap: wrap;
 }
 
-.nav a {
+.nav-button {
   color: white;
   font-weight: bold;
-  text-decoration: none;
-  font-size: 20px;
-  transition: color 0.3s;
+  font-size: 18px;
+  transition: all 0.3s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 5px;
+  font-family: inherit;
 }
 
-.nav a:hover {
+.nav-button:hover {
   color: #1db954;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-button.active {
+  color: #1db954;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: underline;
 }
 
 .contenido {
@@ -37,16 +53,18 @@
   gap: 40px;
   margin: 40px 0;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .info-cuadro {
-  background-color: rgba(12, 61, 98, 0.8);
+  background-color: rgba(12, 61, 98, 0.9);
   width: 100%;
   max-width: 600px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   padding: 25px;
   margin: 10px;
+  transition: all 0.3s ease;
 }
 
 .info-textarea {
@@ -62,6 +80,7 @@
   outline: none;
   white-space: pre-wrap;
   overflow-wrap: break-word;
+  padding: 10px;
 }
 
 .info-textarea::-webkit-scrollbar {
@@ -82,55 +101,40 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* Estilos para viñetas y listas */
-.info-textarea {
-  white-space: pre-wrap;
-}
-
-
-.info-cuadro p {
-  margin: 0;
-  padding: 0;
-  min-height: 100px;
-  outline: none;
-  width: 100%;
-  white-space: pre-wrap;
-  font-family: inherit;     /* Hereda la fuente personalizada */
-}
-
-/* Estilos para las listas (viñetas) */
-.info-cuadro ul {
-  padding-left: 20px;
-  margin: 10px 0;
-}
-
-.info-cuadro li {
-  margin-bottom: 5px;
-}
 .producto {
-  background-color: rgba(12, 61, 98, 0.8);
+  background-color: rgba(12, 61, 98, 0.9);
   padding: 20px;
   width: 300px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.producto:hover, .info-cuadro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 .producto img {
   width: 100%;
   height: auto;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .producto h2 {
-  margin: 10px 0 5px;
+  margin: 15px 0 10px;
   font-size: 24px;
-}
-
-.precio {
-  font-size: 20px;
   color: #1db954;
 }
 
+.precio {
+  font-size: 22px;
+  color: #1db954;
+  font-weight: bold;
+}
+
+/* SOLUCIÓN COMPLETA PARA BOTONES */
 .botones {
   display: flex;
   justify-content: center;
@@ -142,42 +146,58 @@
   z-index: 10;
 }
 
+.botones a {
+  all: unset; /* Resetea todos los estilos de anclaje */
+  display: inline-block; /* Permite dimensiones exactas */
+  cursor: pointer; /* Mantiene el cursor de pointer */
+}
+
 .btn {
   padding: 15px 30px;
   border-radius: 25px;
   font-weight: bold;
-  font-size: 18px;
-  text-decoration: none;
-  color: white !important;
-  transition: all 0.3s ease;
+  font-size: 16px;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: none;
-  cursor: pointer;
   min-width: 220px;
   text-align: center;
-  display: inline-block;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
+/* Elimina cualquier subrayado residual */
+.btn, .btn:hover, .btn:focus, .btn:active {
+  text-decoration: none;
+}
+
+/* Efecto hover mejorado */
 .btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-.btn:active {
-  transform: translateY(0);
-}
-
+/* Estilos específicos para Spotify */
 .spotify {
   background: linear-gradient(135deg, #1DB954 0%, #1ED760 100%);
 }
 
+.spotify:hover {
+  background: linear-gradient(135deg, #1ED760 0%, #1DB954 100%);
+}
+
+/* Estilos específicos para YouTube */
 .youtube {
   background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
 }
 
-/* Efecto adicional para los botones */
+.youtube:hover {
+  background: linear-gradient(135deg, #CC0000 0%, #FF0000 100%);
+}
+
+/* Efecto de brillo al hacer hover */
 .btn::after {
   content: '';
   position: absolute;
@@ -185,11 +205,50 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0));
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.15) 0%,
+    rgba(255,255,255,0.05) 50%,
+    rgba(255,255,255,0) 100%
+  );
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.4s;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
 }
 
 .btn:hover::after {
   opacity: 1;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .info-cuadro, .producto {
+    width: 90%;
+    max-width: 100%;
+  }
+  
+  .nav-button {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  
+  .btn {
+    min-width: 200px;
+    width: 100%;
+    padding: 12px 20px;
+  }
+  
+  .botones {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 }
