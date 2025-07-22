@@ -1,5 +1,4 @@
 import React, { useState } from 'react'; 
-import { useNavigate } from 'react-router-dom';
 import './Skills.css';
 import NavBar from './NavBar'; // Importa el componente NavBar
 
