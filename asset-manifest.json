@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/WEBeo/static/css/main.cbd37ecd.css",
-    "main.js": "/WEBeo/static/js/main.c4518075.js",
+    "main.css": "/WEBeo/static/css/main.7e91ad2f.css",
+    "main.js": "/WEBeo/static/js/main.74f223f2.js",
     "static/js/453.a3c1d153.chunk.js": "/WEBeo/static/js/453.a3c1d153.chunk.js",
     "static/media/stars.gif": "/WEBeo/static/media/stars.821309b7c0232d843f27.gif",
     "static/media/Tiburones.jpg": "/WEBeo/static/media/Tiburones.77e89b079f3f21680cb7.jpg",
@@ -9,12 +9,12 @@
     "static/media/backgroundL.jpg": "/WEBeo/static/media/backgroundL.1d5d33b32257d4f1470f.jpg",
     "static/media/googleG.png": "/WEBeo/static/media/googleG.264682585e33eac2bcb2.png",
     "index.html": "/WEBeo/index.html",
-    "main.cbd37ecd.css.map": "/WEBeo/static/css/main.cbd37ecd.css.map",
-    "main.c4518075.js.map": "/WEBeo/static/js/main.c4518075.js.map",
+    "main.7e91ad2f.css.map": "/WEBeo/static/css/main.7e91ad2f.css.map",
+    "main.74f223f2.js.map": "/WEBeo/static/js/main.74f223f2.js.map",
     "453.a3c1d153.chunk.js.map": "/WEBeo/static/js/453.a3c1d153.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbd37ecd.css",
-    "static/js/main.c4518075.js"
+    "static/css/main.7e91ad2f.css",
+    "static/js/main.74f223f2.js"
   ]
 }
