@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Principal.css';
-
 import starsGif from '../assets/stars.gif';
 import productoImg from '../assets/Tiburones.jpg';
 import Cv from './Cv';
