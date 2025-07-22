@@ -1,9 +1,47 @@
 import React, { useState } from 'react';
 import './Principal.css';
-import productoImg from '../assets/Tiburones.jpg';
+
 import starsGif from '../assets/stars.gif';
+import productoImg from '../assets/Tiburones.jpg';
+import Cv from './Cv';
+import Contacto from './Contacto';
+import Catalogo from './Catalogo';
+import NavBar from './NavBar'; // Importa el componente NavBar
 
 function Principal() {
+  const [activeTab, setActiveTab] = useState('principal');
+
+  const renderContent = () => {
+    switch(activeTab) {
+      case 'cv':
+        return <Cv />;
+      case 'contacto':
+        return <Contacto />;
+      case 'catalogo':
+        return <Catalogo />;
+      case 'principal':
+      default:
+        return (
+          <>
+            <div className="info-cuadro">
+              <textarea
+                value={infoText}
+                onChange={handleTextChange}
+                className="info-textarea"
+                aria-label="Información personal editable"
+              />
+            </div>
+            <div className="producto">
+              <img src={productoImg} alt="Tiburones - Producto en venta" />
+              <h2>SE VENDE</h2>
+              <p className="precio">s/250</p>
+            </div>
+          </>
+        );
+    }
+  };
+
+
   const [infoText, setInfoText] = useState(`¡Hola! Soy Rodrigo Dávalos Benito, un apasionado por la tecnología y el desarrollo de software, actualmente estudiante de Ingeniería de Software en la Universidad Nacional Mayor de San Marcos (UNMSM). Desde muy joven, he cultivado un fuerte interés por la innovación, la programación y la resolución de problemas, lo que me ha llevado a formarme en una de las instituciones más prestigiosas del país.
 
 Mis fortalezas y habilidades:
@@ -16,92 +54,44 @@ Mis objetivos:
 Actualmente, busco oportunidades para aplicar mis conocimientos en desarrollo de software, ya sea en pasantías, proyectos freelance o colaboraciones tecnológicas, con el fin de seguir creciendo profesionalmente mientras contribuyo con soluciones innovadoras.
 Estoy seguro de que mi dedicación, habilidades técnicas y pasión por la programación pueden ser un gran aporte para cualquier equipo o proyecto. ¡Estoy ansioso por conectar y explorar nuevas oportunidades!`);
 
+
   const [activeTab, setActiveTab] = useState('principal');
+
 
   const handleTextChange = (e) => {
     setInfoText(e.target.value);
   };
 
-  const handleNavClick = (tab) => {
-    setActiveTab(tab);
-    // Aquí puedes agregar lógica para cambiar el contenido según la pestaña
-  };
 
   return (
     <div className="principal" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${starsGif})` }}>
-      <nav className="nav">
-        <button 
-          onClick={() => handleNavClick('cv')}
-          className={`nav-button ${activeTab === 'cv' ? 'active' : ''}`}
-          aria-label="Ver curriculum vitae"
-        >
-          CV
-        </button>
-        <button 
-          onClick={() => handleNavClick('contacto')}
-          className={`nav-button ${activeTab === 'contacto' ? 'active' : ''}`}
-          aria-label="Ver información de contacto"
-        >
-          CONTACTO
-        </button>
-        <button 
-          onClick={() => handleNavClick('principal')}
-          className={`nav-button ${activeTab === 'principal' ? 'active' : ''}`}
-          aria-label="Ver sección principal"
-        >
-          PRINCIPAL
-        </button>
-        <button 
-          onClick={() => handleNavClick('skills')}
-          className={`nav-button ${activeTab === 'skills' ? 'active' : ''}`}
-          aria-label="Ver habilidades"
-        >
-          SKILLS
-        </button>
-        <button 
-          onClick={() => handleNavClick('catalogo')}
-          className={`nav-button ${activeTab === 'catalogo' ? 'active' : ''}`}
-          aria-label="Ver catálogo"
-        >
-          CATALOGO
-        </button>
-      </nav>
-
+      <NavBar activeTab={activeTab} /> {/* Usa el componente NavBar */}
+      
       <div className="contenido">
-        <div className="info-cuadro">
-          <textarea
-            value={infoText}
-            onChange={handleTextChange}
-            className="info-textarea"
-            aria-label="Información personal editable"
-          />
-        </div>
-
-        <div className="producto">
-          <img src={productoImg} alt="Tiburones - Producto en venta" />
-          <h2>SE VENDE</h2>
-          <p className="precio">s/250</p>
-        </div>
+        {renderContent()}
       </div>
 
-      <div className="botones">
-        <a href="https://open.spotify.com/intl-es/track/4RVUw6uwxQGsbLBKAWNiHL?si=37007cd7b8654ea8" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="btn spotify"
-          aria-label="Escuchar canción más sonada en Spotify"
-        >
-          Canción más sonada en Spotify
-        </a>
-        <a href="https://www.youtube.com/watch?v=VvHCFDUwv4s&list=RDVvHCFDUwv4s&start_radio=1" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="btn youtube"
-          aria-label="Ver canción más sonada en YouTube"
-        >
-          Canción más sonada en YouTube
-        </a>
-      </div>
+      {activeTab === 'principal' && (
+        <div className="botones">
+          <a href="https://open.spotify.com/intl-es/track/4RVUw6uwxQGsbLBKAWNiHL?si=37007cd7b8654ea8" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn spotify"
+            aria-label="Escuchar canción más sonada en Spotify"
+          >
+            Canción más sonada en Spotify
+          </a>
+          <a href="https://www.youtube.com/watch?v=VvHCFDUwv4s&list=RDVvHCFDUwv4s&start_radio=1" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn youtube"
+            aria-label="Ver canción más sonada en YouTube"
+          >
+            Canción más sonada en YouTube
+          </a>
+        </div>
+      )}
+
     </div>
   );
 }

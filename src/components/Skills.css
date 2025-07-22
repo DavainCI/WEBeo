@@ -1,0 +1,205 @@
+/* Estilos base */
+.skills-container {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)),
+    url('../assets/stars.gif') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  padding: 20px;
+  font-family: 'Arturo Outline', sans-serif;
+}
+
+/* Barra de navegación (coherente con Principal.css) */
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(12, 61, 98, 0.8);
+  padding: 15px 0;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 5px;
+  font-family: inherit;
+}
+
+.nav-button:hover {
+  color: #1db954;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-button.active {
+  color: #1db954;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: underline;
+}
+
+/* Contenido principal lado a lado */
+.skills-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.bars-section, .pentagon-section {
+  flex: 1;
+  background-color: rgba(12, 61, 98, 0.9);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos para las barras */
+.skill-bar-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  width: 100px;
+  text-align: right;
+  padding-right: 15px;
+  font-weight: bold;
+}
+
+.skill-bar-background {
+  flex-grow: 1;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+}
+
+.skill-value {
+  width: 40px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Estilos para el pentágono */
+.pentagon-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+.attribute-label {
+  fill: white;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+/* Atributos adicionales */
+.additional-attributes {
+  background-color: rgba(12, 61, 98, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.additional-attributes h3 {
+  color: #1db954;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.additional-attributes ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.additional-attributes li {
+  display: flex;
+  gap: 10px;
+}
+
+.attr-name {
+  color: #aaa;
+}
+
+.attr-value {
+  font-weight: bold;
+}
+
+.code-note {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #aaa;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .skills-content {
+    flex-direction: column;
+  }
+  
+  .bars-section, .pentagon-section {
+    width: 100%;
+  }
+  
+  .additional-attributes ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .skill-bar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .skill-name {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
+  .skill-bar-background {
+    width: 100%;
+  }
+  
+  .skill-value {
+    width: 100%;
+    text-align: right;
+    margin: 5px 0 0 0;
+  }
+  
+  .nav-button {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+}
