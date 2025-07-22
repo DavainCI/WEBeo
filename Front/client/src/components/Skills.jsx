@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import './Skills.css';
+import NavBar from './NavBar'; // Importa el componente NavBar
+
 
 function Skills() {
-  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('skills'); // Añade estado para activeTab
   
   // Atributos principales
   const mainAttributes = [
@@ -37,49 +39,11 @@ function Skills() {
     return points.join(' ');
   };
 
-  const handleNavClick = (tab) => {
-    if (tab === 'principal') {
-      navigate('/principal');
-    }
-    // Agrega más rutas según sea necesario
-  };
-
   return (
     <div className="skills-container">
-      {/* Barra de navegación */}
-      <nav className="nav">
-        <button 
-          onClick={() => handleNavClick('cv')}
-          className="nav-button"
-        >
-          CV
-        </button>
-        <button 
-          onClick={() => handleNavClick('contacto')}
-          className="nav-button"
-        >
-          CONTACTO
-        </button>
-        <button 
-          onClick={() => handleNavClick('principal')}
-          className="nav-button active"
-        >
-          PRINCIPAL
-        </button>
-        <button 
-          onClick={() => handleNavClick('skills')}
-          className="nav-button"
-        >
-          SKILLS
-        </button>
-        <button 
-          onClick={() => handleNavClick('catalogo')}
-          className="nav-button"
-        >
-          CATALOGO
-        </button>
-      </nav>
-
+      {/* Usa el componente NavBar en lugar del nav duplicado */}
+      <NavBar activeTab={activeTab} />
+      
       <h2>Habilidades</h2>
       
       {/* Contenedor principal lado a lado */}
