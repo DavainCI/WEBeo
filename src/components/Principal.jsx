@@ -53,8 +53,6 @@ Mis objetivos:
 Actualmente, busco oportunidades para aplicar mis conocimientos en desarrollo de software, ya sea en pasantías, proyectos freelance o colaboraciones tecnológicas, con el fin de seguir creciendo profesionalmente mientras contribuyo con soluciones innovadoras.
 Estoy seguro de que mi dedicación, habilidades técnicas y pasión por la programación pueden ser un gran aporte para cualquier equipo o proyecto. ¡Estoy ansioso por conectar y explorar nuevas oportunidades!`);
 
-
-
   const handleTextChange = (e) => {
     setInfoText(e.target.value);
   };

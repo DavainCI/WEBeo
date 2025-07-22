@@ -8,16 +8,16 @@ function Skills() {
   
   // Atributos principales
   const mainAttributes = [
-    { name: 'Velocidad', value: 100, color: '#1DB954' },
-    { name: 'Potencia', value: 50, color: '#1ED760' },
-    { name: 'Precisión', value: 60, color: '#1DB954' },
+    { name: 'Humor', value: 100, color: '#1DB954' },
+    { name: 'Agilidad', value: 50, color: '#1ED760' },
+    { name: 'Pepa', value: 60, color: '#1DB954' },
     { name: 'Resistencia', value: 40, color: '#1ED760' },
-    { name: 'Agilidad', value: 30, color: '#1DB954' }
+    { name: 'Puntualidad', value: 30, color: '#1DB954' }
   ];
 
   // Atributos adicionales
   const additionalAttributes = [
-    { name: 'Técnica', value: 20 },
+    { name: 'Memoria', value: 20 },
     { name: 'Concentración', value: 0 }
   ];
 
