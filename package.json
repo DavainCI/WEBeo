@@ -16,9 +16,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-
-  "homepage": "https://DavainCI.github.io/WEBeo", 
-
+  "homepage": "https://DavainCI.github.io/WEBeo",
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
@@ -44,10 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
-
   }
 }

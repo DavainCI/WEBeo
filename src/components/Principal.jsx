@@ -54,8 +54,6 @@ Actualmente, busco oportunidades para aplicar mis conocimientos en desarrollo de
 Estoy seguro de que mi dedicación, habilidades técnicas y pasión por la programación pueden ser un gran aporte para cualquier equipo o proyecto. ¡Estoy ansioso por conectar y explorar nuevas oportunidades!`);
 
 
-  const [activeTab, setActiveTab] = useState('principal');
-
 
   const handleTextChange = (e) => {
     setInfoText(e.target.value);
