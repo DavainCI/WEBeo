@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Principal from './components/Principal';
@@ -7,6 +8,7 @@ import Cv from './components/Cv';
 import Contacto from './components/Contacto';
 import Catalogo from './components/Catalogo';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="/cv" element={<Cv />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/catalogo" element={<Catalogo />} />
+
       </Routes>
     </Router>
   );

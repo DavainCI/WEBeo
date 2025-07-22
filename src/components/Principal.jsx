@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Principal.css';
+
 import starsGif from '../assets/stars.gif';
 import productoImg from '../assets/Tiburones.jpg';
 import Cv from './Cv';
@@ -40,6 +41,7 @@ function Principal() {
     }
   };
 
+
   const [infoText, setInfoText] = useState(`¡Hola! Soy Rodrigo Dávalos Benito, un apasionado por la tecnología y el desarrollo de software, actualmente estudiante de Ingeniería de Software en la Universidad Nacional Mayor de San Marcos (UNMSM). Desde muy joven, he cultivado un fuerte interés por la innovación, la programación y la resolución de problemas, lo que me ha llevado a formarme en una de las instituciones más prestigiosas del país.
 
 Mis fortalezas y habilidades:
@@ -52,9 +54,14 @@ Mis objetivos:
 Actualmente, busco oportunidades para aplicar mis conocimientos en desarrollo de software, ya sea en pasantías, proyectos freelance o colaboraciones tecnológicas, con el fin de seguir creciendo profesionalmente mientras contribuyo con soluciones innovadoras.
 Estoy seguro de que mi dedicación, habilidades técnicas y pasión por la programación pueden ser un gran aporte para cualquier equipo o proyecto. ¡Estoy ansioso por conectar y explorar nuevas oportunidades!`);
 
+
+  const [activeTab, setActiveTab] = useState('principal');
+
+
   const handleTextChange = (e) => {
     setInfoText(e.target.value);
   };
+
 
   return (
     <div className="principal" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${starsGif})` }}>
@@ -84,6 +91,7 @@ Estoy seguro de que mi dedicación, habilidades técnicas y pasión por la progr
           </a>
         </div>
       )}
+
     </div>
   );
 }
