@@ -5,14 +5,9 @@ import { useNavigate } from 'react-router-dom';
 function NavBar({ activeTab }) {
   const navigate = useNavigate();
 
-  const handleNavClick = (tab) => {
-    if (tab === 'skills') {
-      navigate('/skills');
-    } else if (tab === 'principal') {
-      navigate('/principal');
-    }
-    // Puedes agregar más rutas según sea necesario
-  };
+const handleNavClick = (tab) => {
+  navigate(`/${tab}`); // Redirige a /contacto, /cv, etc.
+};
 
   return (
     <nav className="nav">
