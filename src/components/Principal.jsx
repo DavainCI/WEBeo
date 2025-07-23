@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Principal.css';
 import starsGif from '../assets/stars.gif';
-import productoImg from '../assets/Tiburones.jpg';
+import ImgTiburones from '../assets/Productos/Tiburones.jpg';
 import Cv from './Cv';
 import Contacto from './Contacto';
 import Catalogo from './Catalogo';
@@ -31,7 +31,7 @@ function Principal() {
               />
             </div>
             <div className="producto">
-              <img src={productoImg} alt="Tiburones - Producto en venta" />
+              <img src={ImgTiburones} alt="Tiburones - Producto en venta" />
               <h2>SE VENDE</h2>
               <p className="precio">s/250</p>
             </div>
