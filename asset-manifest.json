@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/WEBeo/static/css/main.dcd2f9ba.css",
-    "main.js": "/WEBeo/static/js/main.ada278da.js",
+    "main.css": "/WEBeo/static/css/main.2743dfff.css",
+    "main.js": "/WEBeo/static/js/main.0d35e7f9.js",
     "static/js/453.a3c1d153.chunk.js": "/WEBeo/static/js/453.a3c1d153.chunk.js",
     "static/media/stars.gif": "/WEBeo/static/media/stars.821309b7c0232d843f27.gif",
     "static/media/foto_cv.jpg": "/WEBeo/static/media/foto_cv.248d1a91bd4aa173e18b.jpg",
@@ -11,12 +11,12 @@
     "static/media/backgroundL.jpg": "/WEBeo/static/media/backgroundL.1d5d33b32257d4f1470f.jpg",
     "static/media/googleG.png": "/WEBeo/static/media/googleG.264682585e33eac2bcb2.png",
     "index.html": "/WEBeo/index.html",
-    "main.dcd2f9ba.css.map": "/WEBeo/static/css/main.dcd2f9ba.css.map",
-    "main.ada278da.js.map": "/WEBeo/static/js/main.ada278da.js.map",
+    "main.2743dfff.css.map": "/WEBeo/static/css/main.2743dfff.css.map",
+    "main.0d35e7f9.js.map": "/WEBeo/static/js/main.0d35e7f9.js.map",
     "453.a3c1d153.chunk.js.map": "/WEBeo/static/js/453.a3c1d153.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dcd2f9ba.css",
-    "static/js/main.ada278da.js"
+    "static/css/main.2743dfff.css",
+    "static/js/main.0d35e7f9.js"
   ]
 }
