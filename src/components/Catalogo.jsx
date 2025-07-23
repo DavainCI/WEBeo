@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Catalogo.css';
 import NavBar from './NavBar';
 import { useNavigate } from 'react-router-dom';
@@ -8,55 +8,23 @@ import ImgRayquaza from '../assets/Productos/Rayquaza.jpg';
 
 function Catalogo() {
   const navigate = useNavigate();
-  // Datos de ejemplo para los productos del catálogo
+  const [imagenAmpliada, setImagenAmpliada] = useState(null);
+
   const productos = [
     {
       id: 1,
       nombre: 'Tiburones',
       precio: 250,
       imagen: ImgTiburones,
-      descripcion: 'Peluche de tiburón de alta calidad, perfecto para coleccionistas.'
+      descripcion: 'Cautivadora escena submarina con siluetas de tiburones bajo una luz brillante en el océano azul profundo. Perfecta para amantes del mar y arte sereno.'
     },
     {
       id: 2,
       nombre: 'Rayquaza',
       precio: 200,
       imagen: ImgRayquaza,
-      descripcion: 'Peluche suave de oso polar, ideal para regalos.'
+      descripcion: 'Vibrante pintura acrílica de Rayquaza envuelto en una torre bajo un cielo estilizado. Ideal para fans de Pokémon y arte anime.'
     },
-    
-    /*
-
-    {
-      id: 3,
-      nombre: 'Dragones',
-      precio: 300,
-      imagen: 'https://via.placeholder.com/300x200?text=Dragones',
-      descripcion: 'Dragón de peluche con detalles artesanales.'
-    },
-    {
-      id: 4,
-      nombre: 'Dinosaurios',
-      precio: 180,
-      imagen: 'https://via.placeholder.com/300x200?text=Dinosaurios',
-      descripcion: 'Variedad de dinosaurios de peluche en diferentes tamaños.'
-    },
-    {
-      id: 5,
-      nombre: 'Animales Marinos',
-      precio: 220,
-      imagen: 'https://via.placeholder.com/300x200?text=Animales+Marinos',
-      descripcion: 'Set de animales marinos en peluche.'
-    },
-    {
-      id: 6,
-      nombre: 'Animales de la Selva',
-      precio: 270,
-      imagen: 'https://via.placeholder.com/300x200?text=Animales+Selva',
-      descripcion: 'Colección de animales de la selva en peluche.'
-    }
-
-    */
   ];
 
   return (
@@ -65,37 +33,56 @@ function Catalogo() {
       
       <div className="catalogo-content">
         <h2>Catálogo de Productos</h2>
-        <p className="catalogo-descripcion">Explora nuestra colección exclusiva de peluches artesanales</p>
+        <p className="catalogo-descripcion">Explora mi colección exclusiva de objetos </p>
         
         <div className="productos-grid">
           {productos.map((producto) => (
             <div key={producto.id} className="producto-card">
-              <div className="producto-imagen-container">
+              <div 
+                className="producto-imagen-container"
+                onClick={() => setImagenAmpliada(producto.imagen)}
+              >
                 <img 
                   src={producto.imagen} 
                   alt={producto.nombre} 
-                  className="producto-imagen"
+                  className="producto-imagen-ampliada"
                   onError={(e) => {
                     e.target.onerror = null; 
                     e.target.src = 'https://via.placeholder.com/300x200?text=Imagen+no+disponible';
                   }}
                 />
-              </div>
+              </div>      
               <div className="producto-info">
                 <h3 className="producto-nombre">{producto.nombre}</h3>
                 <p className="producto-descripcion">{producto.descripcion}</p>
                 <p className="producto-precio">s/{producto.precio}</p>
-                  <button 
-                    className="producto-boton" 
-                    onClick={() => navigate('/contacto')}
-                  >
-                    LO QUIERO
-                  </button>
+                <button 
+                  className="producto-boton" 
+                  onClick={() => navigate('/contacto')}
+                >
+                  LO QUIERO
+                </button>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal para imagen ampliada */}
+      {imagenAmpliada && (
+        <div 
+          className="imagen-modal" 
+          onClick={() => setImagenAmpliada(null)}
+        >
+          <div className="imagen-modal-contenido">
+            <img 
+              src={imagenAmpliada} 
+              alt="Vista ampliada" 
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
