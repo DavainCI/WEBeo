@@ -28,7 +28,6 @@ function Cv() {
                 <p><strong>CEO </strong>Apple Inc</p>
                 <p><strong>CTO </strong>Microsoft Corporation</p>
                 <p className="cv-fecha">Civitatis Septiembre 2023 – Julio 2025</p>
-                <p><strong>... </strong></p>
               </div>
             </div>
           </div>
