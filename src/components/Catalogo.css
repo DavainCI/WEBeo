@@ -1,0 +1,131 @@
+/* Estilos base - Coherentes con Principal.css */
+.catalogo-container {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)),
+    url('../assets/stars.gif') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  padding: 20px;
+  font-family: 'Arturo Outline', sans-serif;
+}
+
+.catalogo-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.catalogo-content h2 {
+  color: #1db954;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.catalogo-descripcion {
+  color: #ddd;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.producto-card {
+  background-color: rgba(12, 61, 98, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.producto-imagen-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.producto-card:hover .producto-imagen {
+  transform: scale(1.05);
+}
+
+.producto-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.producto-nombre {
+  color: #1db954;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.producto-descripcion {
+  color: #ddd;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  min-height: 60px;
+}
+
+.producto-precio {
+  color: #1db954;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.producto-boton {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(29, 185, 84, 0.2);
+  color: #1db954;
+  border: 1px solid #1db954;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.producto-boton:hover {
+  background-color: rgba(29, 185, 84, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .productos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .catalogo-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .producto-imagen-container {
+    height: 180px;
+  }
+}
