@@ -41,7 +41,7 @@ function Skills() {
   return (
     <div className="skills-container">
       {/* Usa el componente NavBar en lugar del nav duplicado */}
-      <NavBar activeTab={activeTab} />
+      <NavBar activeTab="Skils" />
       
       <h2>Habilidades</h2>
       
