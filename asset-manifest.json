@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/WEBeo/static/css/main.bc5301ef.css",
-    "main.js": "/WEBeo/static/js/main.459de6e6.js",
+    "main.css": "/WEBeo/static/css/main.675ed230.css",
+    "main.js": "/WEBeo/static/js/main.141d5b73.js",
     "static/js/453.a3c1d153.chunk.js": "/WEBeo/static/js/453.a3c1d153.chunk.js",
     "static/media/stars.gif": "/WEBeo/static/media/stars.821309b7c0232d843f27.gif",
+    "static/media/foto_cv.jpg": "/WEBeo/static/media/foto_cv.248d1a91bd4aa173e18b.jpg",
     "static/media/Tiburones.jpg": "/WEBeo/static/media/Tiburones.77e89b079f3f21680cb7.jpg",
     "static/media/fuenteP.ttf": "/WEBeo/static/media/fuenteP.707554aa27700335c2cc.ttf",
     "static/media/backgroundL.jpg": "/WEBeo/static/media/backgroundL.1d5d33b32257d4f1470f.jpg",
     "static/media/googleG.png": "/WEBeo/static/media/googleG.264682585e33eac2bcb2.png",
     "index.html": "/WEBeo/index.html",
-    "main.bc5301ef.css.map": "/WEBeo/static/css/main.bc5301ef.css.map",
-    "main.459de6e6.js.map": "/WEBeo/static/js/main.459de6e6.js.map",
+    "main.675ed230.css.map": "/WEBeo/static/css/main.675ed230.css.map",
+    "main.141d5b73.js.map": "/WEBeo/static/js/main.141d5b73.js.map",
     "453.a3c1d153.chunk.js.map": "/WEBeo/static/js/453.a3c1d153.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc5301ef.css",
-    "static/js/main.459de6e6.js"
+    "static/css/main.675ed230.css",
+    "static/js/main.141d5b73.js"
   ]
 }
