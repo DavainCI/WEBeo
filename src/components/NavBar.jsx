@@ -12,19 +12,21 @@ const handleNavClick = (tab) => {
   return (
     <nav className="nav">
       <button 
-        onClick={() => handleNavClick('cv')}
-        className={`nav-button ${activeTab === 'cv' ? 'active' : ''}`}
-        aria-label="Ver curriculum vitae"
-      >
-        CV
-      </button>
-      <button 
         onClick={() => handleNavClick('contacto')}
         className={`nav-button ${activeTab === 'contacto' ? 'active' : ''}`}
         aria-label="Ver información de contacto"
       >
         CONTACTO
       </button>
+      
+      <button 
+        onClick={() => handleNavClick('cv')}
+        className={`nav-button ${activeTab === 'cv' ? 'active' : ''}`}
+        aria-label="Ver curriculum vitae"
+      >
+        CV
+      </button>
+
       <button 
         onClick={() => handleNavClick('principal')}
         className={`nav-button ${activeTab === 'principal' ? 'active' : ''}`}
